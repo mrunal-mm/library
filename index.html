@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -23,7 +24,7 @@
                 <label for="form-read">Have You Read It?</label>
                 <input type="checkbox" id="form-read">
             </div>
-            <button class="add-to-library">Add To Library</button>
+            <button class="add-to-library green-button">Add To Library</button>
         </form>
     </div>
 
@@ -31,7 +32,7 @@
         <h1 id="nav-heading">
             Library App
         </h1>
-        <button id="add-book">+ Add Book</button>
+        <button id="add-book" class="grey-button">+ Add Book</button>
     </nav>
 
     <main>
@@ -40,65 +41,18 @@
                 <p class="bookcard-title">The Three Body Problem</p>
                 <p class="bookcard-author">Cixin Liu</p>
                 <p class="bookcard-pages">450 Pages</p>
-                <button class="bookcard-read unread">Mark As Unread</button>
-                <button class="remove-book">Remove From Library</button>
+                <button class="bookcard-read red-button">Mark As Unread</button>
+                <button class="remove-book grey-button">Remove From Library</button>
             </div>
 
             <div class="bookcard">
-                <p class="bookcard-title">The Game of Thrones</p>
+                <p class="bookcard-title">Atomic Habits</p>
                 <p class="bookcard-author">James Clear</p>
                 <p class="bookcard-pages">316 Pages</p>
-                <button class="bookcard-read read">Mark As Read</button>
-                <button class="remove-book">Remove From Library</button>
+                <button class="bookcard-read green-button">Mark As Read</button>
+                <button class="remove-book grey-button">Remove From Library</button>
             </div>
-
-            <!-- <div class="bookcard">
-                <p class="bookcard-title">The Game of Thrones</p>
-                <p class="bookcard-author">James Clear</p>
-                <p class="bookcard-pages">316 Pages</p>
-                <button class="bookcard-read read">Mark As Read</button>
-                <button class="remove-book">Remove From Library</button>
-            </div>
-
-            <div class="bookcard">
-                <p class="bookcard-title">The Game of Thrones</p>
-                <p class="bookcard-author">James Clear</p>
-                <p class="bookcard-pages">316 Pages</p>
-                <button class="bookcard-read read">Mark As Read</button>
-                <button class="remove-book">Remove From Library</button>
-            </div>
-
-            <div class="bookcard">
-                <p class="bookcard-title">The Three Body Problem</p>
-                <p class="bookcard-author">Cixin Liu</p>
-                <p class="bookcard-pages">450 Pages</p>
-                <button class="bookcard-read unread">Mark As Unread</button>
-                <button class="remove-book">Remove From Library</button>
-            </div>
-
-            <div class="bookcard">
-                <p class="bookcard-title">The Game of Thrones</p>
-                <p class="bookcard-author">James Clear</p>
-                <p class="bookcard-pages">316 Pages</p>
-                <button class="bookcard-read read">Mark As Read</button>
-                <button class="remove-book">Remove From Library</button>
-            </div>
-
-            <div class="bookcard">
-                <p class="bookcard-title">The Game of Thrones</p>
-                <p class="bookcard-author">James Clear</p>
-                <p class="bookcard-pages">316 Pages</p>
-                <button class="bookcard-read read">Mark As Read</button>
-                <button class="remove-book">Remove From Library</button>
-            </div>
-
-            <div class="bookcard">
-                <p class="bookcard-title">The Game of Thrones</p>
-                <p class="bookcard-author">James Clear</p>
-                <p class="bookcard-pages">316 Pages</p>
-                <button class="bookcard-read read">Mark As Read</button>
-                <button class="remove-book">Remove From Library</button>
-            </div> -->
+            
         </div>
     </main>
 </body>
