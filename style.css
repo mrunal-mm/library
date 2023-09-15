@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --white: #fffbfb;
+  --grey: #f0eef1;
+  --dark-grey: #d9d4db;
+  --green: #8fe58c;
+  --dark-green: #72de6e;
+  --red: #ff9c9c;
+  --dark-red: #ff7373;
+}
+
+body {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  /* background-color: var(--grey); */
+}
+
+h1,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+main,nav {
+  position: relative;
+}
+
+main::before,
+nav::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); 
+  z-index: 1; 
+}
+
+/* Modal */
+
+.modal {
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+form {
+  background-color: var(--grey);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  align-items: center;
+  position: relative;
+}
+
+#close {
+  width: 40px;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  background-color: var(--dark-red);
+  fill: white;
+  border-radius: 50%;
+}
+
+#close:hover {
+  background-color: #ff4e4e;
+  cursor: pointer;
+}
+
+.form-heading {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+input {
+  padding: 10px;
+  border: 0;
+  outline: 0;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+label {
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.add-to-library {
+  background-color: var(--green);
+}
+
+/* Navbar */
+nav {
+  background-color: var(--white);
+  display: flex;
+  padding: 20px 10%;
+  align-items: center;
+}
+
+#nav-heading {
+  margin-right: auto;
+  font-size: 1.8rem;
+}
+
+#add-book {
+  height: 50px;
+  width: 120px;
+  background-color: var(--grey);
+}
+
+#add-book:hover {
+  background-color: var(--dark-grey);
+}
+
+/* Main */
+main {
+  background-color: var(--grey);
+  padding: 20px 10%;
+  /* height: 100vh; */
+  min-height: 80vh;
+}
+
+.cards-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.bookcard {
+  background-color: var(--white);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 200px;
+  font-weight: 500;
+  border-radius: 10px;
+}
+
+.bookcard-title {
+  font-size: 1.2rem;
+}
+
+.bookcard button,
+.modal button {
+  width: 100%;
+  height: 40px;
+}
+
+.read {
+  background-color: var(--green);
+}
+
+.read:hover,
+.modal button:hover {
+  background-color: var(--dark-green);
+}
+
+.unread {
+  background-color: var(--red);
+}
+
+.unread:hover {
+  background-color: var(--dark-red);
+}
+
+.remove-book:hover {
+  background-color: var(--dark-grey);
+}
