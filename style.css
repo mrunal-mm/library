@@ -9,6 +9,8 @@
   --red: #ff9c9c;
   --dark-red: #ff7373;
   --box-shadow1: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  --box-shadow2: 0px 20px 10px -20px rgba(0, 0, 0, 0.45) inset,
+    0px -20px 10px -20px rgba(0, 0, 0, 0.45) inset;
 }
 
 body {
@@ -47,14 +49,14 @@ button:hover {
 .red-button {
   background-color: var(--red);
 }
-.red-button:hover{
+.red-button:hover {
   background-color: var(--dark-red);
 }
 
-.grey-button{
+.grey-button {
   background-color: var(--grey);
 }
-.grey-button:hover{
+.grey-button:hover {
   background-color: var(--dark-grey);
 }
 
@@ -163,7 +165,7 @@ input[type="checkbox"] {
 nav {
   display: flex;
   align-items: center;
-  
+
   background-color: var(--white);
   padding: 20px 10%;
   box-shadow: var(--box-shadow1);
@@ -184,6 +186,8 @@ main {
   background-color: var(--grey);
   padding: 50px 10%;
   min-height: 80vh;
+
+  box-shadow: var(--box-shadow2);
 }
 
 .cards-section {
@@ -215,4 +219,33 @@ main {
 .modal button {
   width: 100%;
   height: 40px;
+}
+
+/* Footer ------------------------------*/
+footer {
+  padding: 20px 10%;
+}
+
+footer div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+footer img {
+  width: 30px;
+  transition: all 0.25s ease-in-out;
+}
+
+footer div:hover img {
+  scale: 1.1;
+}
+
+footer a {
+  color: black;
 }
