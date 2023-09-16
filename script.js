@@ -45,7 +45,7 @@ function addToLibrary(event) {
 
   const title = titleInput.value;
   const author = authorInput.value;
-  const pages =  parseInt(pagesInput.value);
+  const pages = parseInt(pagesInput.value);
   const read = checkbox.checked;
 
   const book = new Book(title, author, pages, read);
@@ -56,9 +56,11 @@ function addToLibrary(event) {
 }
 
 // Create Book Card
-function createBookCard(book){
+function createBookCard(book) {
+  const index = myLibrary.indexOf(book);
   const bookcard = document.createElement("div");
   bookcard.className = "bookcard";
+  bookcard.setAttribute("data-index", index);
 
   const title = document.createElement("p");
   title.className = "bookcard-title";
@@ -73,6 +75,7 @@ function createBookCard(book){
   pages.textContent = `${book.pages} Pages`;
 
   const readUnreadButton = document.createElement("button");
+  readUnreadButton.addEventListener("click", changeReadingStatus);
   if (book.read) {
     readUnreadButton.className = "bookcard-read red-button";
     readUnreadButton.textContent = "Mark As Unread";
@@ -84,10 +87,7 @@ function createBookCard(book){
   const removeBookButton = document.createElement("button");
   removeBookButton.className = "remove-book grey-button";
   removeBookButton.textContent = "Remove From Library";
-
-  const index = myLibrary.indexOf(book);
-  removeBookButton.setAttribute("data-index", index);
-  removeBookButton.addEventListener("click", removeFromLibrary)
+  removeBookButton.addEventListener("click", removeFromLibrary);
 
   bookcard.appendChild(title);
   bookcard.appendChild(author);
@@ -97,25 +97,48 @@ function createBookCard(book){
 
   const container = document.querySelector(".cards-section");
   container.appendChild(bookcard);
-};
+}
 
 // Remove Book from Library
-function removeFromLibrary(event){
-  const index = event.target.getAttribute("data-index");
+function removeFromLibrary(event) {
+  const bookcard = event.target.parentNode;
+  const index = bookcard.getAttribute("data-index");
   myLibrary.splice(index, 1);
 
-  const bookcard = event.target.parentNode;
   bookcard.remove();
   resetDataIndex();
   console.log(myLibrary);
 }
 
-function resetDataIndex(){
-  const bookcards = document.querySelectorAll(".remove-book");
-  for (let i=0; i<bookcards.length; i++) {
+function resetDataIndex() {
+  const bookcards = document.querySelectorAll(".bookcard");
+  for (let i = 0; i < bookcards.length; i++) {
     bookcards[i].setAttribute("data-index", i);
   }
 }
+
+// Mark as Read/Unread
+function changeReadingStatus(event) {
+  const readUnreadButton = event.target;
+  const bookcard = readUnreadButton.parentNode;
+  const index = bookcard.getAttribute("data-index");
+  const book = myLibrary[index];
+  book.read = !book.read;
+
+  if (readUnreadButton.textContent === "Mark As Unread"){
+    readUnreadButton.classList.remove("red-button");
+    readUnreadButton.classList.add("green-button");
+    readUnreadButton.textContent = "Mark As Read";
+  }
+  else{
+    readUnreadButton.classList.remove("green-button");
+    readUnreadButton.classList.add("red-button");
+    readUnreadButton.textContent = "Mark As Unread";
+  }
+
+  console.log(myLibrary[index]);
+}
+
 // Already Creatd Books
 const book1 = new Book("The Three Body Problem", "Cixin Liu", 450, true);
 const book2 = new Book("Atomic Habits", "James Clear", 316, false);
