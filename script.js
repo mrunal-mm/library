@@ -140,9 +140,11 @@ function changeReadingStatus(event) {
 }
 
 // Already Creatd Books
-const book1 = new Book("The Three Body Problem", "Cixin Liu", 450, true);
-const book2 = new Book("Atomic Habits", "James Clear", 316, false);
-myLibrary.push(book1);
-myLibrary.push(book2);
-createBookCard(book1);
-createBookCard(book2);
+const book1 = new Book("The Three Body Problem", "Cixin Liu", 472, true);
+const book2 = new Book("The Dark Forest", "Cixin Liu", 512, true);
+const book3 = new Book("Death's End", "Cixin Liu", 604, false);
+const book4 = new Book("The Redemption of Time", "Baoshu", 400, false);
+myLibrary.push(book1, book2, book3, book4);
+for (let book of myLibrary){
+  createBookCard(book);
+}

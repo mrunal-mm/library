@@ -8,6 +8,7 @@
   --dark-green: #72de6e;
   --red: #ff9c9c;
   --dark-red: #ff7373;
+  --box-shadow1: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 body {
@@ -165,6 +166,7 @@ nav {
   
   background-color: var(--white);
   padding: 20px 10%;
+  box-shadow: var(--box-shadow1);
 }
 
 #nav-heading {
@@ -202,6 +204,7 @@ main {
   height: 200px;
   font-weight: 500;
   border-radius: 10px;
+  box-shadow: var(--box-shadow1);
 }
 
 .bookcard-title {
